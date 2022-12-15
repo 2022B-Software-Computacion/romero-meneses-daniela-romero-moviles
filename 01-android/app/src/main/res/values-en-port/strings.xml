@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hola_mundo">EN Portrait</string>
+    <color name="textColor">#FEFFC9</color>
+    <color name="background">#0E7C98</color>
+</resources>

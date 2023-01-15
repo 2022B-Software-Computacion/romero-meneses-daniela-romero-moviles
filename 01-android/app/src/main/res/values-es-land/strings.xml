@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hola_mundo">ES Landscape</string>
-    <color name="textColor">#9F8F00</color>
-    <color name="background">#081726</color>
+    <color name="textColor">#FFFB91</color>
+    <color name="background">#00207C</color>
 </resources>

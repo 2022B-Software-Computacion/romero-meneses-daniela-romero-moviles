@@ -61,12 +61,13 @@ fun main() {
     Suma.pi
     Suma.elevarAlCuadrado(2)
     Suma.historialSumas
+    println(Suma.historialSumas)
 
-    // Static Array
+    // Arreglo Estático
     val arregloEstatico: Array<Int> = arrayOf<Int>(1, 2, 3)
     println(arregloEstatico)
 
-    // Dynamic Array
+    // Arreglo Dinámico
     val arregloDinamico: ArrayList<Int> = arrayListOf<Int>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     println(arregloDinamico)
     arregloDinamico.add(11)
@@ -236,9 +237,10 @@ class Suma(//constructor primario suma
     }
 
     companion object{// atributos y métodos "compartidos" entre las instancias
-    val pi=3.14
+        //entre las instancias
+        val pi=3.14
         fun elevarAlCuadrado(num:Int):Int{
-            return num*num
+            return num * num
         }
         val historialSumas = arrayListOf<Int>()
         fun agregarHistorial(valorNuevaSuma: Int){

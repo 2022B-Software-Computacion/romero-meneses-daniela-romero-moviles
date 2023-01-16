@@ -13,7 +13,7 @@ import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
 
 class BListView : AppCompatActivity() {
-    val arreglo = BBaseDatosEntrenador.arregloEntrenador
+    val arreglo = BBaseDatosMemoria.arregloEntrenador
     var idItemSeleccionado = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -110,6 +110,7 @@ class BListView : AppCompatActivity() {
     ){
         arreglo.add(
             BEntrenador(
+                1,
                 "Adrian",
                 "Descripcion"
             )

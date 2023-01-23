@@ -5,6 +5,7 @@ class Cafeteria {
     var duenio:String=""
     var listaTipoDeCafes= ArrayList<TipoDeCafe>()
 
+    //Crea la Cafeteria con una lista de Cafes
     constructor(nombreCafeteria: String,cantidadTiposCafe: Int, numeroEmpleados:Int, duenio:String, tiposDeCafe: ArrayList<TipoDeCafe>){
         this.nombreCafeteria = nombreCafeteria
         this.cantidadTiposCafe = cantidadTiposCafe

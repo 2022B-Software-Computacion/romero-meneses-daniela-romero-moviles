@@ -46,12 +46,12 @@ fun main() {
                     println("Ingrese la fecha de incorporacion al menu: (aaaa-mm-dd)")
                     val fecha: LocalDate = LocalDate.parse(readln())
 
-                    println("Ingrese los el tamanio del cafe:")
+                    println("Ingrese el tamaño del cafe:")
                     val nuevoTamanio = readln()
                     val nuevosTiposDeCafe = TipoDeCafe(nombreCafe,nuevoPrecio,leche,fecha,nuevoTamanio)
                     nuevaListaTipoDeCafe.add(nuevosTiposDeCafe)
 
-                    println("Desea anadir otro tipo de cafe, responda si o no")
+                    println("Desea añadir otro tipo de cafe, responda si o no")
                     val seguirAnadiendoCafes = readln()
                     nuevoCafe = seguirAnadiendoCafes == "si"
                 }while (nuevoCafe)
@@ -97,17 +97,17 @@ fun main() {
 
                 do{
                     println("Tipos de Cafe: ")
-                    println("7. Crear")
-                    println("8. Mostrar tipos de cafe")
-                    println("9. Actualizar")
-                    println("10. Borrar")
-                    println("11. Salir")
-                    val opcionP = readln().toInt()
+                    println("1. Crear")
+                    println("2. Mostrar tipos de cafe")
+                    println("3. Actualizar")
+                    println("4. Borrar")
+                    println("5. Salir")
+                    val opcionCafes = readln().toInt()
 
                     listaCafeterias = leerArchivo()
 
-                    when(opcionP){
-                        7->{ //crear
+                    when(opcionCafes){
+                        1->{ //crear
                             print("Ingrese los datos de los tipos de cafe:\n")
 
                             println("Nombre del cafe: ")
@@ -132,7 +132,7 @@ fun main() {
                             listaCafeterias[indiceCafeteria].listaTipoDeCafes.add(tipoDeCafe)
                             escribirArchivo(listaCafeterias)
                         }
-                        8->{ // Mostar
+                        2->{ // Mostar
                             println("Tipos de Cafe")
                             val tiposDeCafe = listaCafeterias[indiceCafeteria].listaTipoDeCafes
                             tiposDeCafe.forEach{
@@ -144,7 +144,7 @@ fun main() {
                                         "   Tamaño: "+cafes.tamanio)
                             }
                         }
-                        9->{// Actualizar
+                        3->{// Actualizar
                             println("Nombre del cafe: ")
                             val nombreCafe = readln()
                             val auxCafe = TipoDeCafe()
@@ -152,7 +152,7 @@ fun main() {
                             escribirArchivo(listaCafeterias)
                             println("Información actualizada\n")
                         }
-                        10->{//Borrar
+                        4->{//Borrar
                             println("Nombre del cafe: ")
                             val nombreProd = readln()
                             val auxProd = TipoDeCafe()
@@ -162,7 +162,7 @@ fun main() {
                         }
                     }
 
-                }while (opcionP!=11)
+                }while (opcionCafes!=5)
             }
             5->{
                 println("Nombre de la cafeteria: ")

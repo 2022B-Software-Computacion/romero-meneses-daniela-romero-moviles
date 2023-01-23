@@ -10,7 +10,7 @@ class Cafeteria {
         this.cantidadTiposCafe = cantidadTiposCafe
         this.numeroEmpleados = numeroEmpleados
         this.duenio = duenio
-        this.listaTipoDeCafes = ArrayList<TipoDeCafe>()
+        this.listaTipoDeCafes = tiposDeCafe
     }
 
     constructor(){
@@ -22,9 +22,9 @@ class Cafeteria {
         var indice = 0
         listaCafeterias.forEach{
                 cafeteriaAux:Cafeteria ->
-            if(cafeteriaAux.nombreCafeteria.equals(nombreCafeteria)){
-                indice =  listaCafeterias.indexOf(cafeteriaAux)
-            }
+                if(cafeteriaAux.nombreCafeteria.equals(nombreCafeteria)){
+                    indice =  listaCafeterias.indexOf(cafeteriaAux)
+                }
         }
         return indice
     }

@@ -16,9 +16,9 @@ fun main() {
         val opcion = readln().toInt()
         var listaCafeterias = leerArchivo()
 
+
         when (opcion) {
             1 -> {//Crear
-                val nuevaListaTipoDeCafe= ArrayList<TipoDeCafe>()
                 println("Escriba el nombre de la nueva Cafeteria: ")
                 val nombreCafeteria: String = readln()
                 println("Escriba la cantidad de tipos de cafe que tiene: ")
@@ -28,8 +28,9 @@ fun main() {
                 println("Escriba el nombre del dueño: ")
                 val nombreDuenio: String = readln()
                 var nuevoCafe: Boolean
+                val nuevaListaTipoDeCafe= ArrayList<TipoDeCafe>()
                 do {
-                    print("Ingrese los datos de los tipos de cafe:")
+                    print("Ingrese los datos de los tipos de cafe: \n")
 
                     println("Nombre del cafe: ")
                     val nombreCafe: String = readln()
@@ -45,7 +46,7 @@ fun main() {
                     println("Ingrese la fecha de incorporacion al menu: (aaaa-mm-dd)")
                     val fecha: LocalDate = LocalDate.parse(readln())
 
-                    print("Ingrese los el tamanio del cafe:")
+                    println("Ingrese los el tamanio del cafe:")
                     val nuevoTamanio = readln()
                     val nuevosTiposDeCafe = TipoDeCafe(nombreCafe,nuevoPrecio,leche,fecha,nuevoTamanio)
                     nuevaListaTipoDeCafe.add(nuevosTiposDeCafe)
@@ -68,7 +69,7 @@ fun main() {
                             "   Cantidad tipos de cafe: " + cafeteria.cantidadTiposCafe +
                             "   Numero de empleados: "+cafeteria.numeroEmpleados +
                             "   Dueño: "+ cafeteria.duenio+"\n")
-                    println("Tipos de Cafe que ofrecen")
+                    println("Tipos de Cafe que ofrecen: \n")
                     cafeteria.listaTipoDeCafes.forEach{
                             tipoDeCafe: TipoDeCafe ->
                         println("Nombre: " + tipoDeCafe.nombre+
@@ -95,7 +96,7 @@ fun main() {
                 val indiceCafeteria = auxCafeteria.buscarCafeteria(listaCafeterias, nombreCafeteria)
 
                 do{
-                    println("Tipos de Cafe: \n")
+                    println("Tipos de Cafe: ")
                     println("7. Crear")
                     println("8. Mostrar tipos de cafe")
                     println("9. Actualizar")
@@ -107,7 +108,7 @@ fun main() {
 
                     when(opcionP){
                         7->{ //crear
-                            print("Ingrese los datos de los tipos de cafe:")
+                            print("Ingrese los datos de los tipos de cafe:\n")
 
                             println("Nombre del cafe: ")
                             val nombreCafe: String = readln()
@@ -123,7 +124,7 @@ fun main() {
                             println("Ingrese la fecha de incorporacion al menu: (aaaa-mm-dd)")
                             val fecha: LocalDate = LocalDate.parse(readln())
 
-                            print("Ingrese los el tamanio del cafe:")
+                            println("Ingrese los el tamanio del cafe:")
                             val nuevoTamanio = readln()
 
                             val tipoDeCafe = TipoDeCafe(nombreCafe, nuevoPrecio, leche, fecha, nuevoTamanio)
@@ -178,28 +179,28 @@ fun main() {
 
 fun escribirArchivo(texto:ArrayList<Cafeteria>){
 
-    val archivo = File("archivos/cafeterias.txt")
+    val archivo = File("src/cafeterias.txt")
     archivo.writeText("")
     texto.forEach { cafeteriaEscrita: Cafeteria ->
         archivo.appendText("Cafeteria: ")
         archivo.appendText("Nombre:" + cafeteriaEscrita.nombreCafeteria +
-                " Cantidad tipos de Cafe: " + cafeteriaEscrita.cantidadTiposCafe+
-                " Numero de Empleados: "+cafeteriaEscrita.numeroEmpleados+
-                " Dueño: "+cafeteriaEscrita.duenio+"\n")
+                " :Cantidad tipos de Cafe: " + cafeteriaEscrita.cantidadTiposCafe+
+                " :Numero de Empleados: "+cafeteriaEscrita.numeroEmpleados+
+                " :Dueño: "+cafeteriaEscrita.duenio+"\n")
 
         cafeteriaEscrita.listaTipoDeCafes.forEach { cafe: TipoDeCafe ->
             archivo.appendText("Cafes: ")
             archivo.appendText("Nombre: " + cafe.nombre+
-                    " Precio: "+cafe.precio+
-                    " Lleva leche:"+cafe.llevaLeche.toString()+
-                    " Fecha de Incorporacion al menu:"+cafe.fechaIncorporacion+
-                    " Tamaño:"+cafe.tamanio+"\n")
+                    " :Precio: "+cafe.precio+
+                    " :Lleva leche:"+cafe.llevaLeche.toString()+
+                    " :Fecha de Incorporacion al menu:"+cafe.fechaIncorporacion+
+                    " :Tamaño:"+cafe.tamanio+"\n\n")
         }
     }
 }
 
 fun leerArchivo():ArrayList<Cafeteria>{
-    val inputStream: InputStream = File("archivos/cafeterias.txt").inputStream()
+    val inputStream: InputStream = File("src/cafeterias.txt").inputStream()
     val lineas = mutableListOf<String>()
     inputStream.bufferedReader().useLines { lines -> lines.forEach { lineas.add(it) } }
 
@@ -209,7 +210,7 @@ fun leerArchivo():ArrayList<Cafeteria>{
     lineas.forEach{ linea: String->
         val tokens = listOf(*linea.split("\\s*:\\s*".toRegex()).toTypedArray())
 
-        if(tokens[0].equals("Cafeteria:")){
+        if(tokens[0].equals("Cafeteria")){
             val cafeteria = Cafeteria()
             cafeteria.nombreCafeteria = tokens[2]
             cafeteria.cantidadTiposCafe = tokens[4].toInt()
@@ -218,7 +219,7 @@ fun leerArchivo():ArrayList<Cafeteria>{
             listaCafeterias.add(cafeteria)
             indiceSuper = listaCafeterias.indexOf(cafeteria)
         }else{
-            if(tokens[0].equals("Cafes:") ){
+            if(tokens[0].equals("Cafes") ){
                 val cafes = TipoDeCafe()
                 cafes.nombre = tokens[2]
                 cafes.precio = tokens[4].toDouble()

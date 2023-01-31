@@ -1,0 +1,5 @@
+Cafeteria: Nombre:Cafeteria 1 :Cantidad tipos de Cafe: 2 :Numero de Empleados: 14 :Dueño: Juana
+Cafes: Nombre: Frappe :Precio: 1.95 :Lleva leche:true :Fecha de Incorporacion al menu:2021-12-03 :Tamaño:Pequeño
+
+Cafes: Nombre: Mocca :Precio: 2.5 :Lleva leche:true :Fecha de Incorporacion al menu:2020-02-02 :Tamaño:Mediano
+

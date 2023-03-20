@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "292912665866",
+    "project_id": "cafeteriaexamen",
+    "storage_bucket": "cafeteriaexamen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292912665866:android:2a5ac293fa545cdfc096f3",
+        "android_client_info": {
+          "package_name": "com.example.examencafeteria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292912665866-p2dcubp13v4ft1fsnha19ok2ru2n4cc1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_4DMvO6Z2GYiJtnWb00Hjp5wnc7UEsBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292912665866-p2dcubp13v4ft1fsnha19ok2ru2n4cc1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
